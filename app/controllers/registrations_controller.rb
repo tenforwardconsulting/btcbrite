@@ -42,7 +42,7 @@ class RegistrationsController < ApplicationController
     case network.to_sym
     when :bitcoin then 0.006
     when :litecoin then 0.24
-    when :dogecoin then 10 #3500
+    when :dogecoin then 3500
     end
   end
 
