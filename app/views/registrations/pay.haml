@@ -7,7 +7,9 @@
   .address= @address
 
 .coupon
-  Success!  We have received your payment.  Please register on eventbrite with this code:
+  Success!  We have received your payment.  Please
+  =link_to "register on eventbrite", "https://www.eventbrite.com/e/#{ENV["EVENTBRITE_EVENT_ID"]}"
+  with this code:
   .code
 
 :coffeescript
