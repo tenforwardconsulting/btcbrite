@@ -1,11 +1,10 @@
 %h1 Network node status
 - @netinfo.each do |net, info|
   %h2= net.to_s.capitalize
+  %dl
+    %dt Latest block
+    %dd= info['blocks'] || "???"
+    %dt Difficulty
+    %dd= info['difficulty'] || "???"
   - if !info['errors'].blank?
     .error= info['errors']
-  - else
-    %dl
-      %dt Latest block
-      %dd= info['blocks']
-      %dt Difficulty
-      %dd= info['difficulty']
