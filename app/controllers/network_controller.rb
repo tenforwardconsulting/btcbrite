@@ -3,7 +3,11 @@ class NetworkController < ApplicationController
     @netinfo = {}
     [:bitcoin, :litecoin, :dogecoin].each do |network|
       client = Bitcoin::Client.local(network)
-      @netinfo[network] = client.getinfo rescue {"errors" => "Unable to connect to daemon"}
+      begin
+        @netinfo[network] = client.getinfo
+      rescue Exception => ex
+        @netinfo[network] = {"errors" => "Unable to connect to daemon (#{ex.message})"}
+      end
     end
   end
 end

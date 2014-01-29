@@ -13,9 +13,8 @@ module Bitcoin
 
   class Client
     def self.local(network)
-      network = network.to_sym
       return Bitcoin::Client.new(ENV["#{network.upcase}_USER"], ENV["#{network.upcase}_PASSWORD"],
-        { :host => 'localhost', :port => Bitcoin::NETWORKS[network][:port], :ssl => false} )
+        { :host => 'localhost', :port => Bitcoin::NETWORKS[network.to_sym][:port], :ssl => false} )
     end
   end
 end
