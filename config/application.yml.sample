@@ -1,0 +1,12 @@
+# Add application configuration variables here, as shown below.
+
+BICOIN_USER: bitcoinrpc
+BITCOIN_PASSWORD: pw
+DOGECOIN_USER: dogecoinrpc
+DOGECOIN_PASSWORD: pw
+LITECOIN_USER: litecoinrpc
+LITECOIN_PASSWORD: pw
+
+EVENTBRITE_APP_KEY: 123
+EVENTBRITE_USER_KEY: 456
+EVENTBRITE_EVENT_ID: 789
