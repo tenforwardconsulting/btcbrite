@@ -5,18 +5,18 @@ class RegistrationsController < ApplicationController
 
   def pay
     @price = price params[:network]
-
-    if (params[:account].blank?)
-      params['account'] = "auto" #SecureRandom.hex
+    account = params[:account]
+    if (account.blank?)
+      params[:account:] = SecureRandom.hex
       redirect_to params and return
     end
     client = Bitcoin::Client.local(params[:network])
 
-    existing = client.getaddressesbyaccount(session['account'])
+    existing = client.getaddressesbyaccount(account)
     if (existing.size > 0)
       @address = existing.first
     else
-      @address = client.getnewaddress(session['account'])
+      @address = client.getnewaddress(account)
     end
 
   end
