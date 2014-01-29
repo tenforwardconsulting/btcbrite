@@ -1,0 +1,15 @@
+%h1 Pay with #{params[:network].capitalize}
+
+.send
+  Please send
+  .price= @price
+  to the following address:
+  .address= @address
+
+.coupon
+  Success!  We have received your payment.  Please register on eventbrite with this code:
+  .code
+
+:coffeescript
+  $(document).ready ->
+    new BTCBrite.PaymentPage #{params[:network].to_json}, #{params[:account].to_json}

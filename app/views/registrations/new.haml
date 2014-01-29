@@ -1,0 +1,3 @@
+%h1 Register with Cryptocurrency
+- Bitcoin::NETWORKS.each do |net, info|
+  =link_to "Pay with #{net.to_s.capitalize}", action: :pay, network: net
