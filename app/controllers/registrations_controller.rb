@@ -7,7 +7,7 @@ class RegistrationsController < ApplicationController
     @price = price params[:network]
     account = params[:account]
     if (account.blank?)
-      params[:account:] = SecureRandom.hex
+      params[:account] = SecureRandom.hex
       redirect_to params and return
     end
     client = Bitcoin::Client.local(params[:network])
