@@ -4,8 +4,10 @@ class RegistrationsController < ApplicationController
   end
 
   def pay
+    @network = params[:network]
     @price = price params[:network]
     account = params[:account]
+
     if (account.blank?)
       params[:account] = SecureRandom.hex
       redirect_to params and return

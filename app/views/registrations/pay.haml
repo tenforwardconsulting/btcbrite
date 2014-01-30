@@ -1,16 +1,19 @@
-%h1 Pay with #{params[:network].capitalize}
+.payment
+  %h1 Pay with #{@network.capitalize}
+  = image_tag "#{@network}.png"
 
-.send
-  Please send
-  .price= @price
-  to the following address:
-  .address= @address
+  .send
+    Please send
+    .price{class: @network}= @price
+    to the following address:
+    .address= @address
+    and then wait.  Shouldn't take long...
 
-.coupon
-  Success!  We have received your payment.  Please
-  =link_to "register on eventbrite", "https://www.eventbrite.com/e/#{ENV["EVENTBRITE_EVENT_ID"]}"
-  with this code:
-  .code
+  .coupon
+    Success!  We have received your payment.  Please
+    =link_to "register on eventbrite", "https://www.eventbrite.com/e/#{ENV["EVENTBRITE_EVENT_ID"]}"
+    with this code:
+    .code
 
 :coffeescript
   $(document).ready ->

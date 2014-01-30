@@ -4,11 +4,31 @@
   <title>Btcbrite</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag "hackathon" %>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800">
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.3.0/pure-min.css">
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
+  <div class="pure-g-r" id="layout">
+    <div class="sidebar pure-u">
+        <header class="header">
+            <%= image_tag "madworks-coin.png" %>
+            <hgroup>
+                <h1 class="brand-title">Madworks<br>Crypto-currency<br>Hackathon</h1>
+                <h2 class="brand-tagline">February 15, 2014</h2>
+            </hgroup>
+        </header>
+    </div>
+    <div class="pure-u-1">
+      <div class="content midnight">
+        <section class="post">
+          <div class="post-description">
+            <%= yield %>
+          </div>
+        </section>
+      </div>
+  </div>
 
 </body>
 </html>

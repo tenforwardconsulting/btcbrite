@@ -9,6 +9,38 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  */
+@import compass/reset
 
-.coupon
-  display: none
+.register
+  text-align: center
+  width: 650px
+  margin: 0 auto
+  .currency
+    float: left
+    margin: 32px
+    img
+      width: 120px
+      display: block
+      margin: 0 auto
+.payment
+  text-align: center
+  img
+    width: 180px
+    margin: 32px
+  .price
+    display: inline
+    padding: 0 6px 0 6px
+    font-size: 36px
+    font-style: italic
+
+    &.dogecoin:after
+      content: 'Ɖ'
+      display: inline
+  .address
+    font-size: 36px
+    margin: 16px
+  .coupon
+    margin-top: 32px
+    display: none
+    color: lightgreen
+    font-size: 22px
