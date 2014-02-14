@@ -1,6 +1,5 @@
 class Bter
   @@btc_usd = 800
-  @@
   def price_in(currency)
 
   end
@@ -13,5 +12,4 @@ class Bter
     rates
 
   end
-
 end
