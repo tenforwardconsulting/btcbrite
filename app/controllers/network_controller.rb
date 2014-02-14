@@ -10,4 +10,16 @@ class NetworkController < ApplicationController
       end
     end
   end
+
+  def dice
+    @iterations = 1_000_000
+
+    @bins = {}
+    @iterations.times do
+      int = (Digest::SHA512.hexdigest(SecureRandom.hex)[0...8].to_i(16)/42949672.95).round
+      @bins[int] ||= 0
+      @bins[int] += 1
+    end
+  end
+
 end

@@ -1,0 +1,7 @@
+.dice
+  %h1 PrimeDice simulator
+
+  .chart
+    - 100.times do |i|
+      - height = (@bins[i].to_f / @iterations.to_f * 5000).round
+      .bar{style: "height: #{height}px;"}

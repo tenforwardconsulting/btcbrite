@@ -9,5 +9,6 @@ Btcbrite::Application.routes.draw do
   post 'pay/:network/status', to: 'registrations#payment_status'
 
   get 'networks', to: "network#status"
+  get 'dice', to: 'network#dice'
 
 end

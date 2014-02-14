@@ -42,9 +42,9 @@ class RegistrationsController < ApplicationController
 
   def price(network)
     case network.to_sym
-    when :bitcoin then 0.006
-    when :litecoin then 0.24
-    when :dogecoin then 3500
+    when :bitcoin then 0.008
+    when :litecoin then 0.33
+    when :dogecoin then 3200
     end
   end
 
